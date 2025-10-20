@@ -4,7 +4,8 @@ const userInput = document.getElementById("user-input");
 const outputDiv = document.querySelector(".output-div");
 const output = document.getElementById("output-placeholder");
 
-const apiKey = "994cbcd3fa546139553faaaf8fab25f2";
+// my api key for openweathermap api
+const apiKey = "";
 
 weatherForm.addEventListener("submit", (event) => {
     document.querySelector(".weather-grid").classList.add("invisible");
