@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.5px;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    margin-top: -3rem;
+    margin-bottom: 3rem;
+    font-size: 5rem;
+    opacity: 0.5;
+    transition: opacity 0.7s ease;
+    text-align: center;
+}
+
+h1:hover {
+    opacity: 0.7;
+}
+
+form input, form button, .output-div, .weather-grid div, #output-placeholder{
+    padding: 15px;
+    border-radius: 15px;
+    letter-spacing: 0.3px;
+    border: none;
+    transition: all 0.4s ease;
+}
+
+form input {
+    background-color: white;
+    margin-right: 1rem;
+}
+
+form input:focus, form input:hover, form button:hover {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 70px 4px;
+}
+
+form button {
+    background-color: #5590b9;
+    color: #f2f2f2;
+}
+
+form button:hover {
+    cursor: pointer;
+}
+
+.output-div {
+    margin-top: 4rem;
+    background-color: #e6eef4;
+    width: 60%;
+    min-width: 350px;
+    max-width: 500px;
+    font-size: small;
+    color: #5a5a5a;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+}
+
+.weather-grid div {
+    color: #f2f2f2;
+    background-color: #6eabd6;
+}
+
+.weather-grid div:hover {
+    background-color: #558fb9d2;
+}
+
+.weather-info {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 5px;
+}
+
+.temp-info, .humidity-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.temp-info p, .humidity-info p {
+    font-size: 0.7rem;
+    grid-column: span 2;
+}
+
+.invisible {
+    display: none;
+}
+
+footer {
+    margin-top: 4rem;
+    padding: 15px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+@media screen and (max-width: 991px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    form input {
+        margin-right: 0.5rem;
+    }
+}

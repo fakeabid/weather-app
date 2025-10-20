@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Weather App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>What's my weather?</h1>
+        <form method="GET" id="weather-form">
+            <input type="text" id="user-input" placeholder="enter your city name"/>
+            <button type="submit" id="submit-btn">Get Weather</button>
+        </form>
+        <div class="output-div invisible">
+            <div id="output-placeholder"></div>
+            <div class="weather-grid invisible">
+                <div class="weather-info">
+                </div>
+                <div class="temp-info">
+                </div>
+                <div class="humidity-info">
+                </div>
+            </div>
+        </div>
+        <footer>Powered by <a href="https://openweathermap.org/">OpenWeather API</a></footer>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
