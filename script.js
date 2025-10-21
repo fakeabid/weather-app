@@ -4,14 +4,21 @@ const userInput = document.getElementById("user-input");
 const outputDiv = document.querySelector(".output-div");
 const output = document.getElementById("output-placeholder");
 
+const weatherGrid = document.querySelector(".weather-grid");
+
 // my api key for openweathermap api
 const apiKey = "";
 
 weatherForm.addEventListener("submit", (event) => {
-    document.querySelector(".weather-grid").classList.add("invisible");
     event.preventDefault();
     output.innerHTML =`Searching for weather in ${userInput.value}...`;
+
     outputDiv.classList.remove("invisible");
+    // delay to trigger animation
+    setTimeout(() => {
+        outputDiv.classList.add("show");
+    }, 300);
+    
     getWeather();
     userInput.value = "";
 });
@@ -22,6 +29,10 @@ async function getWeather() {
     try {
         const response = await fetch(url);
         if (!response.ok) {
+            weatherGrid.classList.remove("show"); // makes the weather cards dissapear
+            setTimeout(() => {
+                weatherGrid.classList.add("invisible"); // removes them from document flow after the animation
+            }, 300);
             output.innerHTML = `<span style="color: #6d100dff;">Failed to find a matching station. Please enter a valid city.<span>`;
             throw new Error(`Response status: ${response.status}`);
         }
@@ -66,7 +77,15 @@ async function getWeather() {
             }
             count += 1;
         });
-        document.querySelector(".weather-grid").classList.remove("invisible");
+
+        // hide first to reset animation
+        weatherGrid.classList.remove("show");
+        weatherGrid.classList.remove("invisible");
+
+        // delay to trigger animation
+        setTimeout(() => {
+            weatherGrid.classList.add("show");
+        }, 300);
 
     } catch (error) {
         console.error(error.message);

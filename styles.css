@@ -62,12 +62,30 @@ form button:hover {
     max-width: 500px;
     font-size: small;
     color: #5a5a5a;
+
+    opacity: 0;
+    transform: scale(0.7);
+    transition: all 0.7s ease;
+}
+
+.output-div.show {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .weather-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 12px;
+
+    opacity: 0;
+    transform: scale(0.7);
+    transition: all 0.7s ease;
+}
+
+.weather-grid.show {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .weather-grid div {
